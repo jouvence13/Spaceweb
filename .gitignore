@@ -1,0 +1,43 @@
+# Fichiers de l'OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Éditeurs de code
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+
+# Node.js (si tu ajoutes npm à l'avenir)
+node_modules/
+npm-debug.log
+yarn-error.log
+.npmrc
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Fichiers sensibles personnels
+cv.pdf
+.private/
+secrets.json
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.backup
+.DS_Store
+
+# Logs
+*.log
+
+# Build/Distribution
+dist/
+build/
+.cache/

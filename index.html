@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio développeur web moderne et responsive" />
+  <title>AKODE JOUVENCE — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-live="polite" aria-label="Chargement">
+    <div class="loader__inner">
+      <span class="loader__dot"></span>
+      <span class="loader__dot"></span>
+      <span class="loader__dot"></span>
+    </div>
+    <p class="loader__text">Chargement du portfolio…</p>
+  </div>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- Navbar -->
+  <header class="header" id="top">
+    <nav class="navbar" aria-label="Navigation principale">
+      <a class="logo" href="#home" aria-label="Retour à l'accueil">
+        <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2"/>
+          <path d="M12 20L18 14L24 20L30 14" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="18" cy="14" r="2" fill="currentColor"/>
+          <circle cx="24" cy="20" r="2" fill="currentColor"/>
+          <defs>
+            <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0%" stop-color="#00ffa3"/>
+              <stop offset="100%" stop-color="#ff6b35"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">spaceweb</span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home" class="nav__link">Accueil</a></li>
+        <li><a href="#about" class="nav__link">À propos</a></li>
+        <li><a href="#skills" class="nav__link">Compétences</a></li>
+        <li><a href="#projects" class="nav__link">Projets</a></li>
+        <li><a href="#experience" class="nav__link">Expérience</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
+          <span class="theme-toggle__icon" aria-hidden="true">🌗</span>
+          <span class="theme-toggle__text">Theme</span>
+        </button>
+      </div>
+    </nav>
+    <div class="scroll-indicator" aria-hidden="true"></div>
+  </header>
+  
+  <!-- Config GitHub pour récupérer les projets -->
+  <script>
+    // Remplace par ton username GitHub
+    window.GITHUB_USERNAME = 'jouvence13'; // Change ceci par ton vrai username
+  </script>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="section hero" id="home" aria-label="Section Accueil">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="badges">
+            <span class="badge">Open to work</span>
+            <span class="badge">Alternance</span>
+            <span class="badge">Remote</span>
+          </div>
+          <h1 class="hero__title">AKODE Jouvence</h1>
+          <h2 class="hero__subtitle"><span id="typing"></span></h2>
+          <p class="hero__desc">
+            Je conçois des interfaces web modernes, performantes et accessibles, orientées résultats.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">Voir mes projets</a>
+            <a class="btn btn--ghost" href="#contact">Me contacter</a>
+          </div>
+          <div class="socials" aria-label="Liens sociaux">
+            <a class="socials__link" href="https://github.com/jouvence13" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.35.73-4.06-1.61-4.06-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.08-.73.08-.73 1.21.08 1.85 1.25 1.85 1.25 1.08 1.85 2.83 1.32 3.52 1 .11-.79.42-1.32.76-1.62-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.86.12 3.16.77.84 1.24 1.92 1.24 3.24 0 4.63-2.8 5.65-5.48 5.95.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.82.58A12 12 0 0 0 12 .5z"/></svg>
+            </a>
+            <a class="socials__link" href="https://www.linkedin.com/in/jouvence-noriak-akode-6b9825384/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5c0 1.38-1.1 2.5-2.48 2.5A2.5 2.5 0 1 1 4.98 3.5zM.5 8.5h4V23h-4zM8.5 8.5h3.8v2h.05c.52-1 1.8-2.05 3.7-2.05 4 0 4.75 2.6 4.75 6V23h-4v-5.3c0-1.27-.02-2.9-1.8-2.9-1.8 0-2.1 1.4-2.1 2.8V23h-4z"/></svg>
+            </a>
+            <a class="socials__link" href="mailto:spaceweb1997@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4 8 5 8-5V6l-8 5-8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orb"></div>
+          <div class="grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section class="section about" id="about" aria-label="Section À propos">
+      <div class="container">
+        <div class="section__head">
+          <h3>À propos</h3>
+          <p>Un profil polyvalent, orienté produit et performance.</p>
+        </div>
+        <div class="about__grid">
+          <img class="about__photo" src="images/jouv.jpg" alt="Photo JOUVENCE" />
+          <div class="about__content">
+            <p>
+              Développeur web passionné, j'aime transformer des idées en expériences digitales claires et efficaces.
+              Je travaille avec une approche UI/UX pour livrer des interfaces accessibles et esthétiques.
+            </p>
+            <div class="about__cards">
+              <div class="info-card">
+                <h4>Ce que je recherche</h4>
+                <p>Stage / Alternance / CDI</p>
+              </div>
+              <div class="info-card">
+                <h4>Localisation & Disponibilité</h4>
+                <p>Localisation : France<br>Disponibilité : Immédiate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section skills" id="skills" aria-label="Section Compétences">
+      <div class="container">
+        <div class="section__head">
+          <h3>Compétences</h3>
+          <p>Stacks maîtrisées et outils de production modernes.</p>
+        </div>
+        <div class="skills__grid">
+          <div class="skill-card">
+            <h4>Front-end</h4>
+            <div class="skill-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">React</span>
+            </div>
+            <div class="progress" data-progress="90">
+              <span>Maîtrise</span>
+              <div class="progress__bar"><span></span></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h4>Back-end</h4>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Symfony</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">API REST</span>
+            </div>
+            <div class="progress" data-progress="85">
+              <span>Maîtrise</span>
+              <div class="progress__bar"><span></span></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h4>Data & IA</h4>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">ML</span>
+              <span class="tag">Data Analysis</span>
+            </div>
+            <div class="progress" data-progress="78">
+              <span>Maîtrise</span>
+              <div class="progress__bar"><span></span></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h4>Database</h4>
+            <div class="skill-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Supabase</span>
+            </div>
+            <div class="progress" data-progress="75">
+              <span>Maîtrise</span>
+              <div class="progress__bar"><span></span></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h4>Tools</h4>
+            <div class="skill-tags">
+              <span class="tag">Git</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+            </div>
+            <div class="progress" data-progress="85">
+              <span>Maîtrise</span>
+              <div class="progress__bar"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="section projects" id="projects" aria-label="Section Projets">
+      <div class="container">
+        <div class="section__head">
+          <h3>Projets</h3>
+          <p>Une sélection de réalisations récentes.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtrer les projets">
+          <button class="filter active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+          <button class="filter" data-filter="front" role="tab">Frontend</button>
+          <button class="filter" data-filter="back" role="tab">Backend</button>
+          <button class="filter" data-filter="full" role="tab">Fullstack</button>
+          <span class="projects-count" id="projectsCount">6 projets</span>
+          <button class="btn btn--small btn--primary" id="loadGithubProjects" style="margin-left: auto;">📦 Charger mes projets</button>
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+          <!-- Loading state -->
+          <div class="projects__loading" id="projectsLoading" style="display: none;">
+            <div class="loader__inner">
+              <span class="loader__dot"></span>
+              <span class="loader__dot"></span>
+              <span class="loader__dot"></span>
+            </div>
+            <p>Chargement des projets GitHub...</p>
+          </div>
+          
+          <!-- Les projets seront injectés ici par JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Expérience -->
+    <section class="section experience" id="experience" aria-label="Section Expérience">
+      <div class="container">
+        <div class="section__head">
+          <h3>Expérience & Formation</h3>
+          <p>Mon parcours professionnel et académique.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item timeline__item--work">
+            <div class="timeline__marker"></div>
+            <div class="timeline__date">2024 - Présent</div>
+            <div class="timeline__content">
+              <span class="timeline__badge">Expérience</span>
+              <h4>Développeur Full Stack — Freelance</h4>
+              <p>Conception et développement d'applications web complètes pour divers clients. Création de sites vitrines, e-commerce et dashboards avec focus sur l'UX et les performances.</p>
+              <ul class="timeline__skills">
+                <li>React</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+                <li>API REST</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--work">
+            <div class="timeline__marker"></div>
+            <div class="timeline__date">2023 - 2024</div>
+            <div class="timeline__content">
+              <span class="timeline__badge">Stage</span>
+              <h4>Stage Développeur Web — savplus</h4>
+              <p>Développement d'interfaces utilisateur responsives et optimisation des performances front-end. Intégration d'APIs REST et mise en place de tests automatisés.</p>
+              <ul class="timeline__skills">
+                <li>JavaScript</li>
+                <li>Vue.js</li>
+                <li>Git</li>
+                <li>CI/CD</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--education">
+            <div class="timeline__marker"></div>
+            <div class="timeline__date">2025 - 2026</div>
+            <div class="timeline__content">
+              <span class="timeline__badge timeline__badge--education">Formation</span>
+              <h4>Master 1 Ingénierie Data & IA — [ÉCOLE]</h4>
+              <p>Formation orientée data engineering, machine learning et architecture de données. Projets pratiques sur le traitement, l’analyse et la mise en production de modèles.</p>
+              <ul class="timeline__skills">
+                <li>Python</li>
+                <li>ML</li>
+                <li>Data Pipelines</li>
+                <li>Cloud</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--education">
+            <div class="timeline__marker"></div>
+            <div class="timeline__date">2022 - 2024</div>
+            <div class="timeline__content">
+              <span class="timeline__badge timeline__badge--education">Formation</span>
+              <h4>Licence Développement Web & Mobile — [ÉCOLE]</h4>
+              <p>Spécialisation en développement web et mobile. Réalisation de projets fullstack, UI/UX et applications cross‑platform.</p>
+              <ul class="timeline__skills">
+                <li>Web</li>
+                <li>Mobile</li>
+                <li>API</li>
+                <li>UI/UX</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services" aria-label="Section Services">
+      <div class="container">
+        <div class="section__head">
+          <h3>Services</h3>
+          <p>Ce que je peux construire pour vous.</p>
+        </div>
+        <div class="services__grid">
+          <div class="service-card">
+            <span class="service-card__icon" aria-hidden="true">🌐</span>
+            <h4>Sites vitrine</h4>
+            <p>Sites rapides, SEO, conversions optimisées.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__icon" aria-hidden="true">⚡</span>
+            <h4>API</h4>
+            <p>API robustes, sécurisées, documentées.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__icon" aria-hidden="true">🎯</span>
+            <h4>UI/UX</h4>
+            <p>Designs clairs, parcours fluides, accessibilité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact" aria-label="Section Contact">
+      <div class="container">
+        <div class="section__head">
+          <h3>Contact</h3>
+          <p>Discutons de votre projet.</p>
+        </div>
+        <div class="contact__grid">
+          <form class="contact__form" id="contactForm" novalidate>
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Votre nom" required aria-label="Nom" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Votre email" required aria-label="Email" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Votre message" required aria-label="Message"></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">Envoyer</button>
+          </form>
+          <div class="contact__info">
+            <div class="info-card">
+              <h4>Email</h4>
+              <p>spaceweb1997@gmail.com</p>
+              <button class="btn btn--ghost" id="copyEmail">Copier email</button>
+            </div>
+            <div class="info-card">
+              <h4>CV</h4>
+              <p>PDF à jour</p>
+              <a class="btn btn--ghost" href="cv.pdf" download>Télécharger CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer__brand">
+        <span class="footer__logo">spaceweb</span>
+        <p>Développement web & data — interfaces modernes, rapides et accessibles.</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://github.com/jouvence13" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jouvence-noriak-akode-6b9825384/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:spaceweb1997@gmail.com">Email</a>
+      </div>
+      <p class="footer__copy">© 2026 jouvence-noriak-akode. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+
+  <!-- Modal Projet -->
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Détails du projet">
+    <div class="modal__content" role="document">
+      <button class="modal__close" id="modalClose" aria-label="Fermer">✕</button>
+      <h4 id="modalTitle">Titre</h4>
+      <p id="modalDesc">Description</p>
+      <p class="modal__stack" id="modalStack">Stack</p>
+      <div class="modal__actions">
+        <a class="btn btn--primary" id="modalDemo" href="#" target="_blank" rel="noopener">Demo</a>
+        <a class="btn btn--ghost" id="modalCode" href="#" target="_blank" rel="noopener">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
