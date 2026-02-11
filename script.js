@@ -172,7 +172,7 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove("show"), 2500);
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = form.name.value.trim();
   const email = form.email.value.trim();
@@ -189,8 +189,46 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  showToast("Message envoyé ! Je vous réponds rapidement.");
-  form.reset();
+  // Désactiver le bouton pendant l'envoi
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Envoi en cours...";
+
+  try {
+    // Email 1 : Notification pour VOUS
+    await emailjs.send(
+      'service_nd0r86q',
+      'template_tnvooz8', // Template pour vous (notification)
+      {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_name: "Jouvence",
+        reply_to: email
+      }
+    );
+
+    // Email 2 : Auto-réponse pour le VISITEUR
+    await emailjs.send(
+      'service_nd0r86q',
+      'template_c0v43vp', // Template pour le visiteur (auto-réponse)
+      {
+        from_name: name,
+        to_email: email, // Email du visiteur
+        message: message
+      }
+    );
+
+    showToast("✓ Message envoyé ! Je vous réponds rapidement.");
+    form.reset();
+  } catch (error) {
+    console.error('Erreur EmailJS:', error);
+    showToast("⚠ Erreur lors de l'envoi. Réessayez ou contactez-moi directement.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  }
 });
 
 // Copy email

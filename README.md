@@ -117,7 +117,7 @@ Dans `style.css`, modifie les variables CSS :
   /* ... autres variables */
 }
 ```
-
+zq
 ### Ajouter tes infos
 - Email : `spaceweb1997@gmail.com` → remplace dans tout le code
 - LinkedIn : `https://www.linkedin.com/in/jouvence-noriak-akode-6b9825384/`

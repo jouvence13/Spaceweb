@@ -1173,6 +1173,21 @@ img {
   .burger {
     display: flex;
   }
+
+  /* Masquer l'orbe bleue, la grille et tout le conteneur visuel en mobile */
+  .hero__visual {
+    display: none;
+  }
+
+  /* Réduire la marge en bas de la section hero */
+  .hero {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .hero__grid {
+    gap: 1.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1206,4 +1221,67 @@ img {
   font-size: 0.85rem;
   color: var(--muted);
   margin-left: auto;
+}
+
+/* Bouton WhatsApp flottant */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
+.whatsapp-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Animation pulse pour attirer l'attention */
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+.whatsapp-btn {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
 }
